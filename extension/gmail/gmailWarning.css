@@ -1,0 +1,62 @@
+.scamguard-gmail-status { position: relative; box-sizing: border-box; width: auto; margin: 10px 16px; padding: 13px 15px; border: 1px solid #c8d7d1; border-left: 5px solid #3d7d6c; border-radius: 10px; background: #f5faf8; color: #293641; font: 13px/1.45 system-ui, sans-serif; box-shadow: 0 3px 12px #192e3c1a; }
+.scamguard-gmail-status[data-state="warning"], .scamguard-gmail-status[data-state="investigating"], .scamguard-gmail-status[data-state="result"], .scamguard-gmail-status[data-state="error"] { border-color: #efc46b; border-left-color: #d47a0a; background: #fffaf0; }
+.scamguard-gmail-status.sg-floating { position: fixed; right: 22px; bottom: 22px; z-index: 2147483646; width: min(370px, calc(100vw - 44px)); margin: 0; }
+.scamguard-gmail-status strong { display: block; padding-right: 24px; font-size: 14px; }
+.scamguard-gmail-status p { margin: 6px 0; }
+.scamguard-gmail-status button { border: 0; border-radius: 7px; cursor: pointer; font: inherit; }
+.scamguard-gmail-status [data-sg-investigate] { padding: 8px 13px; background: #146653; color: white; font-weight: 700; }
+.scamguard-gmail-status .sg-view-result { padding: 5px 8px; background: transparent; color: #146653; font-weight: 750; text-decoration: underline; }
+.scamguard-gmail-status .sg-actions { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.scamguard-gmail-status .sg-complete { font-weight: 700; }
+.scamguard-gmail-status button:disabled { opacity: .65; }
+.scamguard-gmail-status .sg-close { position: absolute; top: 7px; right: 8px; padding: 2px 7px; background: transparent; color: #66737d; font-size: 20px; }
+.scamguard-gmail-status .sg-observed { margin: 8px 0; }
+.scamguard-gmail-status .sg-observed ul { margin: 4px 0 8px; padding-left: 20px; }
+.scamguard-gmail-status .sg-result-priority { margin: 10px 0 12px; }
+.scamguard-gmail-status .sg-risk { margin-bottom: 10px; font-size: 16px; font-weight: 800; letter-spacing: .02em; }
+.scamguard-gmail-status .sg-recommendation { padding: 10px 11px; border-radius: 7px; background: #fff1cb; }
+.scamguard-gmail-status .sg-recommendation b, .scamguard-gmail-status .sg-investigated b, .scamguard-gmail-status .sg-why b { display: block; margin-bottom: 3px; text-transform: uppercase; letter-spacing: .04em; font-size: 11px; }
+.scamguard-gmail-status .sg-recommendation p { margin: 3px 0 0; font-size: 14px; font-weight: 650; }
+.scamguard-gmail-status .sg-status { font-weight: 700; text-transform: capitalize; }
+.scamguard-gmail-status .sg-investigated, .scamguard-gmail-status .sg-why { margin-top: 11px; padding-top: 9px; border-top: 1px solid #ead7ae; }
+.scamguard-gmail-status .sg-trace { margin-top: 6px; font-size: 12px; }
+.scamguard-gmail-status .sg-failed { color: #a52d39; }
+.scamguard-gmail-status .sg-debug { margin-top: 9px; color: #53636d; font-size: 11px; }
+.scamguard-gmail-status .sg-debug pre { margin: 6px 0 0; padding: 7px; overflow-wrap: anywhere; white-space: pre-wrap; border-radius: 6px; background: #edf3f1; font: 11px/1.45 ui-monospace, monospace; }
+
+.scamguard-investigation-overlay {
+    position: fixed;
+    /* Move it down slightly from Gmail's top bar */
+    top: 80px;
+    /* Keep it on the right side */
+    right: 32px;
+    /* Make sure it stays above Gmail */
+    z-index: 2147483647;
+    box-sizing: border-box;
+    /* Bigger box */
+    width: min(560px, calc(100vw - 64px));
+    /* Let it take up most of the screen vertically */
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 24px;
+    border: 1px solid #d7c080;
+    border-radius: 16px;
+    background: #fffdf8;
+    color: #26343d;
+    font: 14px/1.5 system-ui, sans-serif;
+    /* Makes it clearly float above the email */
+    box-shadow: 0 24px 70px #172a3866;
+}
+.scamguard-investigation-overlay h2 { margin: 0 36px 14px 0; font-size: 19px; line-height: 1.25; }
+.scamguard-investigation-overlay .sg-overlay-close { position: absolute; top: 9px; right: 11px; border: 0; background: transparent; color: #64727c; cursor: pointer; font: 26px/1 system-ui, sans-serif; }
+.scamguard-investigation-overlay .sg-overlay-loading { margin: 8px 0; padding: 12px; border-radius: 8px; background: #f2f6f4; font-weight: 700; }
+.scamguard-investigation-overlay .sg-overlay-error { padding: 11px; border-radius: 8px; background: #fff1df; color: #873d20; font-weight: 700; }
+.scamguard-investigation-overlay .sg-overlay-risk { margin-bottom: 12px; font-size: 18px; font-weight: 850; letter-spacing: .02em; }
+.scamguard-investigation-overlay .sg-overlay-recommendation { margin-bottom: 15px; padding: 12px 13px; border: 1px solid #e6c879; border-radius: 9px; background: #fff0c5; }
+.scamguard-investigation-overlay .sg-overlay-recommendation b, .scamguard-investigation-overlay .sg-observed b, .scamguard-investigation-overlay .sg-investigated b, .scamguard-investigation-overlay .sg-why b { display: block; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .05em; font-size: 11px; }
+.scamguard-investigation-overlay .sg-overlay-recommendation p { margin: 3px 0 0; font-size: 15px; font-weight: 700; }
+.scamguard-investigation-overlay .sg-observed, .scamguard-investigation-overlay .sg-investigated, .scamguard-investigation-overlay .sg-why { margin-top: 12px; padding-top: 11px; border-top: 1px solid #e4ddd0; }
+.scamguard-investigation-overlay .sg-observed ul { margin: 5px 0 0; padding-left: 21px; }
+.scamguard-investigation-overlay .sg-trace { margin-top: 7px; font-size: 13px; }
+.scamguard-investigation-overlay .sg-failed { color: #a52d39; }
+.scamguard-investigation-overlay .sg-why p { margin: 5px 0 0; }
