@@ -1,0 +1,19 @@
+{
+  "name": "scamguard-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ScamGuard contextual AI assessment with deterministic evidence collectors.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-contract.js && node ../extension/tests/stage1.test.js && node test-ai-provider.js && node test-stage2.js",
+    "test:stage1": "node ../extension/tests/stage1.test.js",
+    "test:stage2": "node test-ai-provider.js && node test-stage2.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.22.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.6.0"
+  }
+}

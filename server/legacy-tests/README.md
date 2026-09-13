@@ -1,0 +1,1 @@
+These tests document the retired additive scoring/API contracts. They are archived for reference and are not runnable against the new grading architecture. Current offline contract checks: npm test. No eight-scenario live suite was run for this redesign, as requested.

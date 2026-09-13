@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "ScamGuard",
+  "version": "0.2.2",
+  "description": "Locally screens the Gmail message you are viewing and offers an optional deeper investigation.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:3000/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["gmail/gmailExtractor.js", "gmail/localScreening.js", "gmail/gmailObserver.js"],
+      "css": ["gmail/gmailWarning.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "ScamGuard",
+    "default_popup": "popup.html"
+  }
+}

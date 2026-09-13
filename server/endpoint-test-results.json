@@ -1,0 +1,412 @@
+{
+  "harmless": {
+    "risk": 0,
+    "verdict": "Low Risk",
+    "securityChecks": {
+      "messageFindings": [],
+      "urlFindings": [],
+      "urlDetails": [],
+      "deterministicScore": 0,
+      "urlScore": 0
+    },
+    "reasons": [],
+    "recommendation": "Few or no configured indicators were found. This does not guarantee safety; verify unexpected requests before taking action.",
+    "urls": [],
+    "scores": {
+      "deterministicScore": 0,
+      "urlScore": 0,
+      "aiSemanticContribution": 0,
+      "finalScore": 0
+    },
+    "aiStatus": "available",
+    "aiAnalysis": {
+      "classification": "low_risk",
+      "socialEngineeringRisk": 0,
+      "uncertain": false,
+      "claimedOrganization": null,
+      "organizationClaimConfidence": 0,
+      "impersonation": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "urgency": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "credentialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "financialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "personalInformationRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "socialEngineering": {
+        "urgency": false,
+        "fear": false,
+        "authority": false,
+        "scarcity": false,
+        "secrecy": false,
+        "financialIncentive": false,
+        "credentialSolicitation": false,
+        "personalInformationRequest": false
+      },
+      "summary": "The message is a casual invitation to lunch with no request for personal data, credentials, or money, and contains no urgency or threat language. No suspicious technical indicators are present.",
+      "recommendation": "No action needed; the email appears benign."
+    }
+  },
+  "phishing": {
+    "risk": 80,
+    "verdict": "Very High Risk",
+    "securityChecks": {
+      "messageFindings": [
+        {
+          "points": 10,
+          "reason": "Urgency: \"immediately\" (+10)"
+        },
+        {
+          "points": 10,
+          "reason": "Urgency: \"suspended\" (+10)"
+        },
+        {
+          "points": 20,
+          "reason": "Credential request: \"password\" (+20)"
+        },
+        {
+          "points": 20,
+          "reason": "Credential request: \"security code\" (+20)"
+        }
+      ],
+      "urlFindings": [],
+      "urlDetails": [],
+      "deterministicScore": 60,
+      "urlScore": 0
+    },
+    "reasons": [
+      "Urgency: \"immediately\" (+10)",
+      "Urgency: \"suspended\" (+10)",
+      "Credential request: \"password\" (+20)",
+      "Credential request: \"security code\" (+20)"
+    ],
+    "recommendation": "Do not click links, share credentials, or send money. Verify the sender through a trusted channel and report the message.",
+    "urls": [],
+    "scores": {
+      "deterministicScore": 60,
+      "urlScore": 0,
+      "aiSemanticContribution": 20,
+      "finalScore": 80
+    },
+    "aiStatus": "available",
+    "aiAnalysis": {
+      "claimedOrganization": "Microsoft",
+      "classification": "suspicious",
+      "credentialRequest": {
+        "detected": true,
+        "confidence": 0.9,
+        "evidence": "The message explicitly asks the recipient to \"Verify your password immediately and send your security code.\""
+      },
+      "financialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "impersonation": {
+        "detected": true,
+        "confidence": 0.8,
+        "evidence": "The message claims to be from Microsoft and requests sensitive credentials, a typical phishing impersonation tactic."
+      },
+      "organizationClaimConfidence": 0.85,
+      "personalInformationRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "recommendation": "The email exhibits classic phishing characteristics: it claims to be from Microsoft, uses urgency, and requests login credentials. Treat it as a phishing attempt and advise the recipient to verify the sender via official Microsoft channels before taking any action.",
+      "socialEngineering": {
+        "urgency": true,
+        "fear": false,
+        "authority": true,
+        "scarcity": false,
+        "secrecy": false,
+        "financialIncentive": false,
+        "credentialSolicitation": true,
+        "personalInformationRequest": false
+      },
+      "socialEngineeringRisk": 80,
+      "summary": "The supplied message claims to be from Microsoft and urges the recipient to verify their password and provide a security code immediately. The rule findings confirm urgency keywords and credential requests. These indicators align with typical phishing tactics that impersonate a legitimate organization to harvest credentials. The content is suspicious and likely malicious, warranting a high social engineering risk score.",
+      "uncertain": false,
+      "urgency": {
+        "detected": true,
+        "confidence": 0.9,
+        "evidence": "The message contains the urgency keywords \"immediately\" and \"suspended\"."
+      }
+    }
+  },
+  "gift-card": {
+    "risk": 43,
+    "verdict": "Suspicious",
+    "securityChecks": {
+      "messageFindings": [
+        {
+          "points": 25,
+          "reason": "Suspicious payment: \"gift card\" (+25)"
+        }
+      ],
+      "urlFindings": [],
+      "urlDetails": [],
+      "deterministicScore": 25,
+      "urlScore": 0
+    },
+    "reasons": [
+      "Suspicious payment: \"gift card\" (+25)"
+    ],
+    "recommendation": "Pause before responding. Verify the sender independently before clicking links or sharing information.",
+    "urls": [],
+    "scores": {
+      "deterministicScore": 25,
+      "urlScore": 0,
+      "aiSemanticContribution": 18,
+      "finalScore": 43
+    },
+    "aiStatus": "available",
+    "aiAnalysis": {
+      "claimedOrganization": null,
+      "classification": "high_risk",
+      "credentialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "financialRequest": {
+        "detected": true,
+        "confidence": 0.9,
+        "evidence": "\"Buy a gift card worth $500 and send me the code.\""
+      },
+      "impersonation": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "organizationClaimConfidence": 0,
+      "personalInformationRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "recommendation": "This message is a clear solicitation for a monetary transfer and claims to be from a high-level executive. It should be treated as a phishing attempt. Report the email to your organization’s security team and do not comply with the request.",
+      "socialEngineering": {
+        "authority": true,
+        "credentialSolicitation": false,
+        "fear": false,
+        "financialIncentive": false,
+        "personalInformationRequest": false,
+        "scarcity": false,
+        "secrecy": true,
+        "urgency": false
+      },
+      "socialEngineeringRisk": 70,
+      "summary": "The email purports to be from a CEO requesting a $500 gift card payment and secrecy. No organization is explicitly claimed, and there is no request for credentials or personal data. The content matches a typical phishing pattern involving financial solicitation and authority impersonation, warranting a high-risk assessment.",
+      "uncertain": false,
+      "urgency": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      }
+    }
+  },
+  "prompt-injection": {
+    "risk": 30,
+    "verdict": "Suspicious",
+    "securityChecks": {
+      "messageFindings": [
+        {
+          "points": 10,
+          "reason": "Urgency: \"immediately\" (+10)"
+        }
+      ],
+      "urlFindings": [],
+      "urlDetails": [],
+      "deterministicScore": 10,
+      "urlScore": 0
+    },
+    "reasons": [
+      "Urgency: \"immediately\" (+10)"
+    ],
+    "recommendation": "Pause before responding. Verify the sender independently before clicking links or sharing information.",
+    "urls": [],
+    "scores": {
+      "deterministicScore": 10,
+      "urlScore": 0,
+      "aiSemanticContribution": 20,
+      "finalScore": 30
+    },
+    "aiStatus": "available",
+    "aiAnalysis": {
+      "claimedOrganization": null,
+      "classification": "high_risk",
+      "credentialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "financialRequest": {
+        "detected": true,
+        "confidence": 1,
+        "evidence": "\"Send $500 in gift cards immediately.\""
+      },
+      "impersonation": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "organizationClaimConfidence": 0,
+      "personalInformationRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "recommendation": "The message contains a direct request for a monetary transfer, which is a clear financial solicitation. The sender’s identity is unknown, and the content includes an urgency cue. This combination indicates a high likelihood of a phishing or scam attempt. The user should not comply with the request and should treat the message as suspicious. The user should also verify the sender’s identity through official channels before taking any action.",
+      "socialEngineering": {
+        "authority": false,
+        "credentialSolicitation": false,
+        "fear": false,
+        "financialIncentive": false,
+        "personalInformationRequest": false,
+        "scarcity": false,
+        "secrecy": false,
+        "urgency": true
+      },
+      "socialEngineeringRisk": 80,
+      "summary": "The supplied message is a short instruction that requests the recipient to send $500 in gift cards immediately. The message contains an urgency cue (“immediately”) and a direct financial solicitation. No organization is claimed, and no credentials or personal information are requested. The lack of sender or subject information, combined with the urgent money request, makes the message highly suspicious and likely malicious. The user should not comply and should verify the sender’s identity through official channels.",
+      "uncertain": false,
+      "urgency": {
+        "detected": true,
+        "confidence": 1,
+        "evidence": "Urgency: \"immediately\" (+10)"
+      }
+    }
+  },
+  "suspicious-url": {
+    "risk": 100,
+    "verdict": "Very High Risk",
+    "securityChecks": {
+      "messageFindings": [
+        {
+          "points": 10,
+          "reason": "Urgency: \"immediately\" (+10)"
+        },
+        {
+          "points": 20,
+          "reason": "Credential request: \"password\" (+20)"
+        },
+        {
+          "points": 20,
+          "reason": "Credential request: \"login\" (+20)"
+        },
+        {
+          "points": 35,
+          "reason": "Possible impersonation: this message mentions PayPal, but the following link(s) do not use paypal.com: https://paypal.com@192.0.2.44/login. This is suspicious if the message claims to represent PayPal; it is not proof of malicious intent. (+35)"
+        }
+      ],
+      "urlFindings": [
+        {
+          "points": 15,
+          "reason": "URL \"https://paypal.com@192.0.2.44/login\": contains an @ symbol, which can obscure the destination (+15)"
+        },
+        {
+          "points": 15,
+          "reason": "URL \"https://paypal.com@192.0.2.44/login\": IP-address host instead of a domain name (+15)"
+        }
+      ],
+      "urlDetails": [
+        {
+          "url": "https://paypal.com@192.0.2.44/login",
+          "hostname": "192.0.2.44",
+          "hasAtSymbol": true,
+          "ipHost": true,
+          "punycode": false,
+          "subdomainCount": 0,
+          "subdomainCountMethod": "label-count heuristic assuming a two-label base domain; not public-suffix aware",
+          "findings": [
+            "URL \"https://paypal.com@192.0.2.44/login\": contains an @ symbol, which can obscure the destination (+15)",
+            "URL \"https://paypal.com@192.0.2.44/login\": IP-address host instead of a domain name (+15)"
+          ]
+        }
+      ],
+      "deterministicScore": 85,
+      "urlScore": 30
+    },
+    "reasons": [
+      "Urgency: \"immediately\" (+10)",
+      "Credential request: \"password\" (+20)",
+      "Credential request: \"login\" (+20)",
+      "Possible impersonation: this message mentions PayPal, but the following link(s) do not use paypal.com: https://paypal.com@192.0.2.44/login. This is suspicious if the message claims to represent PayPal; it is not proof of malicious intent. (+35)",
+      "URL \"https://paypal.com@192.0.2.44/login\": contains an @ symbol, which can obscure the destination (+15)",
+      "URL \"https://paypal.com@192.0.2.44/login\": IP-address host instead of a domain name (+15)"
+    ],
+    "recommendation": "Do not click links, share credentials, or send money. Verify the sender through a trusted channel and report the message.",
+    "urls": [
+      "https://paypal.com@192.0.2.44/login"
+    ],
+    "scores": {
+      "deterministicScore": 85,
+      "urlScore": 30,
+      "aiSemanticContribution": 20,
+      "finalScore": 100
+    },
+    "aiStatus": "available",
+    "aiAnalysis": {
+      "claimedOrganization": "PayPal",
+      "classification": "high_risk",
+      "credentialRequest": {
+        "detected": true,
+        "confidence": 0.9,
+        "evidence": "The body requests the user to \"Verify your password immediately\" and includes the word \"password\" and \"login\"."
+      },
+      "financialRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "impersonation": {
+        "detected": true,
+        "confidence": 0.8,
+        "evidence": "The URL analysis found an IP-address host and an @ symbol, which is suspicious in the context of a claimed PayPal account-verification request."
+      },
+      "organizationClaimConfidence": 0.85,
+      "personalInformationRequest": {
+        "detected": false,
+        "confidence": 0,
+        "evidence": ""
+      },
+      "recommendation": "The message exhibits multiple phishing indicators: urgency, credential solicitation, and a URL that mismatches the claimed brand. Treat it as a high-risk phishing attempt. Advise the recipient to verify the sender via official PayPal channels and avoid clicking the link.",
+      "socialEngineering": {
+        "urgency": true,
+        "fear": false,
+        "authority": true,
+        "scarcity": false,
+        "secrecy": false,
+        "financialIncentive": false,
+        "credentialSolicitation": true,
+        "personalInformationRequest": false
+      },
+      "socialEngineeringRisk": 80,
+      "summary": "The message claims to be a PayPal security alert asking the recipient to verify their password immediately. The supplied URL analysis found an IP-address host and an @ symbol, which can obscure the destination, and the hostname does not match the PayPal domain. These technical anomalies combined with the urgency and credential request make the email a high-risk phishing attempt.",
+      "uncertain": false,
+      "urgency": {
+        "detected": true,
+        "confidence": 0.9,
+        "evidence": "The ruleFindings include an urgency_keyword \"immediately\"."
+      }
+    }
+  }
+}
